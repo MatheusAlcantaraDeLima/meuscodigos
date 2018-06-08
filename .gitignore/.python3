@@ -1,0 +1,23 @@
+valproduto = float(input('Digite o valor a ser pago do produto: '))
+print('Digite o número para fazer a escolha do pagamento ')
+print('1. para pagamento à vista no dinheiro, 10 % de desconto ')
+print('2. Para pagamento à vista em cheque, 10 % de desconto')
+print('3. Para pagamento à vista no cartão em até 2X, sem juros')
+print('4. Para parcelas no cartão em 3X ou mais, 20 % de juros')
+num = int(input('Digite o número: '))
+if num == 1:
+    dezporcento = (valproduto * 10) / 100
+    tot1 = valproduto - dezporcento
+    print('O total a ser pago será de R${:.2f}'.format(tot1))
+if num == 2:
+    dezporcento = (valproduto * 10) / 100
+    tot2 = valproduto - dezporcento
+    print('O total a ser pago será de R${:.2f}'.format(tot2))
+if num == 3:
+    parcelado = valproduto / 2
+    print('O valor a ser pago em 2X será de R${:.2f}'.format(parcelado))
+elif num == 4:
+    numparcelas = int(input('Digite o número de parcelas desejada: '))
+    totparcelas = valproduto / numparcelas
+    totjuros = totparcelas + (totparcelas * 20) / 100
+    print('O senhor parcelou em {} vezes, e pagará R${:.2f}'.format(numparcelas, totjuros))
